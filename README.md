@@ -4,7 +4,7 @@ An interactive, terminal-style portfolio website showcasing my experience as a C
 
 ## 🚀 Live Demo
 
-Experience the interactive terminal portfolio at: [Your GitHub Pages URL]
+Experience the interactive terminal portfolio at: **https://portfolio-lilac-seven-96.vercel.app/**
 
 ## ✨ Features
 
@@ -130,6 +130,13 @@ Update the portfolio data in `terminal.js` within the command responses.
 
 ## 🚀 Deployment
 
+### Vercel (Recommended)
+1. Connect your GitHub repository to Vercel
+2. Vercel automatically builds and deploys on every push
+3. Get instant previews for pull requests
+4. Custom domain support available
+5. **Currently deployed at**: https://portfolio-lilac-seven-96.vercel.app/
+
 ### GitHub Pages
 1. Push your changes to the main branch
 2. Enable GitHub Pages in repository settings
@@ -139,7 +146,6 @@ Update the portfolio data in `terminal.js` within the command responses.
 ### Other Platforms
 The portfolio is a static website and can be deployed on:
 - Netlify
-- Vercel
 - AWS S3
 - Any static hosting service
 
