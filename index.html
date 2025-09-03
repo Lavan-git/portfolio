@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavan Gupta - AI Terminal Portfolio</title>
+    <link rel="stylesheet" href="terminal.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="terminal-container">
+        <div class="terminal-header">
+            <div class="terminal-buttons">
+                <span class="btn close"></span>
+                <span class="btn minimize"></span>
+                <span class="btn maximize"></span>
+            </div>
+            <div class="terminal-title">Lavan_AI_System_v2.1.3</div>
+        </div>
+        
+        <div class="terminal-body" id="terminal">
+            <div class="boot-sequence">
+                <div class="boot-line">
+                    <span class="timestamp">[2025-09-03 18:51:00]</span> 
+                    <span class="system">SYSTEM</span> 
+                    <span class="text">Initializing Lavan AI Portfolio System...</span>
+                </div>
+                <div class="boot-line">
+                    <span class="timestamp">[2025-09-03 18:51:01]</span> 
+                    <span class="ml">ML_ENGINE</span> 
+                    <span class="text">Loading neural networks... ✓</span>
+                </div>
+                <div class="boot-line">
+                    <span class="timestamp">[2025-09-03 18:51:02]</span> 
+                    <span class="web">WEB_MODULE</span> 
+                    <span class="text">Backend services online... ✓</span>
+                </div>
+                <div class="boot-line">
+                    <span class="timestamp">[2025-09-03 18:51:03]</span> 
+                    <span class="data">DATA_CORE</span> 
+                    <span class="text">Experience database loaded... ✓</span>
+                </div>
+                <div class="boot-line">
+                    <span class="timestamp">[2025-09-03 18:51:04]</span> 
+                    <span class="system">SYSTEM</span> 
+                    <span class="text">Ready for queries. Type 'help' for available commands.</span>
+                </div>
+            </div>
+            
+            <div class="terminal-content" id="content">
+                <div class="welcome-message">
+                    <pre class="ascii-art">
+╔═════════════════════════════════════════════════════════════╗
+║                    LAVAN AI PORTFOLIO SYSTEM                ║
+║                         Version 2.1.3                       ║
+╠═════════════════════════════════════════════════════════════╣
+║  > CSE Undergraduate | Data Science Specialist              ║
+║  > ML Engineer | Web Developer | Research Analyst           ║
+║  > Smart India Hackathon Finalist | VIT Student             ║
+╚═════════════════════════════════════════════════════════════╝
+                    </pre>
+                </div>
+                
+                <div class="command-line">
+                    <span class="prompt">lavan@ai-portfolio:~$</span>
+                    <input type="text" id="command-input" class="command-input" autofocus>
+                    <span class="cursor">█</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="help-sidebar" id="help-sidebar">
+        <div class="help-header">
+            <h3>🤖 AI Commands</h3>
+            <button class="toggle-help" id="toggle-help">←</button>
+        </div>
+        <div class="help-content">
+            <div class="command-group">
+                <h4>Basic Info</h4>
+                <div class="cmd-item" onclick="executeFromSidebar('whoami')">
+                    <span class="cmd">whoami</span>
+                    <span class="desc">Default profile</span>
+                </div>
+                <div class="cmd-item" onclick="executeFromSidebar('roles')">
+                    <span class="cmd">roles</span>
+                    <span class="desc">Available roles</span>
+                </div>
+                <div class="cmd-item" onclick="executeFromSidebar('profile ml-engineer')">
+                    <span class="cmd">profile ml-engineer</span>
+                    <span class="desc">ML Engineer profile</span>
+                </div>
+                <div class="cmd-item" onclick="executeFromSidebar('profile software-engineer')">
+                    <span class="cmd">profile software-engineer</span>
+                    <span class="desc">Software Engineer profile</span>
+                </div>
+                <div class="cmd-item" onclick="executeFromSidebar('profile web-developer')">
+                    <span class="cmd">profile web-developer</span>
+                    <span class="desc">Web Developer profile</span>
+                </div>
+                <div class="cmd-item" onclick="executeFromSidebar('./query --contact')">
+                    <span class="cmd">./query --contact</span>
+                    <span class="desc">Contact details</span>
+                </div>
+            </div>
+            
+            <div class="command-group">
+                <h4>Experience</h4>
+                <div class="cmd-item" onclick="executeFromSidebar('ls experience')">
+                    <span class="cmd">ls experience</span>
+                    <span class="desc">Work history</span>
+                </div>
+                <div class="cmd-item" onclick="executeFromSidebar('cat experience')">
+                    <span class="cmd">cat experience</span>
+                    <span class="desc">Detailed experience</span>
+                </div>
+            </div>
+            
+            <div class="command-group">
+                <h4>Projects</h4>
+                <div class="cmd-item" onclick="executeFromSidebar('ls projects')">
+                    <span class="cmd">ls projects</span>
+                    <span class="desc">Project list</span>
+                </div>
+                <div class="cmd-item" onclick="executeFromSidebar('cat projects')">
+                    <span class="cmd">cat projects</span>
+                    <span class="desc">Detailed projects</span>
+                </div>
+            </div>
+            
+            <div class="command-group">
+                <h4>Skills & Education</h4>
+                <div class="cmd-item" onclick="executeFromSidebar('cat skills')">
+                    <span class="cmd">cat skills</span>
+                    <span class="desc">All skills</span>
+                </div>
+                <div class="cmd-item" onclick="executeFromSidebar('./query --education')">
+                    <span class="cmd">./query --education</span>
+                    <span class="desc">Education info</span>
+                </div>
+            </div>
+            
+            <div class="command-group">
+                <h4>Advanced</h4>
+                <div class="cmd-item" onclick="executeFromSidebar('./neural-scan')">
+                    <span class="cmd">./neural-scan</span>
+                    <span class="desc">AI analysis</span>
+                </div>
+                <div class="cmd-item" onclick="executeFromSidebar('./analyze achievements')">
+                    <span class="cmd">./analyze achievements</span>
+                    <span class="desc">Achievements</span>
+                </div>
+                <div class="cmd-item" onclick="executeFromSidebar('./analyze leadership')">
+                    <span class="cmd">./analyze leadership</span>
+                    <span class="desc">Leadership role</span>
+                </div>
+            </div>
+            
+            <div class="command-group">
+                <h4>Utilities</h4>
+                <div class="cmd-item" onclick="executeFromSidebar('clear')">
+                    <span class="cmd">clear</span>
+                    <span class="desc">Clear terminal</span>
+                </div>
+                <div class="cmd-item" onclick="executeFromSidebar('grep python')">
+                    <span class="cmd">grep &lt;term&gt;</span>
+                    <span class="desc">Search portfolio</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="terminal.js"></script>
+</body>
+</html>
